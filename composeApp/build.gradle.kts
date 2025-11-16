@@ -14,7 +14,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -24,7 +24,7 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
@@ -39,6 +39,10 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("io.ktor:ktor-client-core:2.3.12")
+            implementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -75,5 +79,10 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+
+    implementation("io.ktor:ktor-client-core:2.3.12")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }
 
